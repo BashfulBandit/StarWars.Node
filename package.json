@@ -1,0 +1,23 @@
+{
+  "name": "starwars.node",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+		"build": "node build.js",
+		"lint": "eslint .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@eslint/js": "^9.3.0",
+    "@tsconfig/recommended": "^1.0.6",
+    "esbuild": "^0.21.3",
+    "eslint": "^8.57.0",
+    "globals": "^15.3.0",
+    "typescript-eslint": "^7.10.0"
+  }
+}
