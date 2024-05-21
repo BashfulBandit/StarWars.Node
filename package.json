@@ -1,23 +1,36 @@
 {
-  "name": "starwars.node",
-  "version": "1.0.0",
-  "description": "",
+  "name": "@bashfulbandit/starwars.node.api",
+  "version": "0.1.0",
+  "description": "A Star Wars REST API to retrieving Star Wars universe data.",
   "type": "module",
   "main": "index.js",
   "scripts": {
-		"build": "node build.js",
-		"lint": "eslint .",
+    "build": "rimraf ./dist && node build.js",
+    "start": "npm run build && nodemon dist/index.js",
+    "lint": "eslint .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@eslint/js": "^9.3.0",
-    "@tsconfig/recommended": "^1.0.6",
+    "@gabegabegabe/eslint-config": "^9.0.0-alpha4",
+    "@gabegabegabe/tsconfig": "^4.0.0",
+    "@types/koa": "^2.15.0",
+    "@types/koa__router": "^12.0.4",
+    "@typescript-eslint/eslint-plugin": "^6.20.0",
     "esbuild": "^0.21.3",
     "eslint": "^8.57.0",
-    "globals": "^15.3.0",
-    "typescript-eslint": "^7.10.0"
+    "eslint-plugin-eslint-comments": "^3.2.0",
+    "eslint-plugin-jest": "^27.9.0",
+    "eslint-plugin-jest-formatting": "^3.1.0",
+    "eslint-plugin-json": "^3.1.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-tsdoc": "^0.2.17",
+    "nodemon": "^3.1.0"
+  },
+  "dependencies": {
+    "@koa/router": "^12.0.1",
+    "koa": "^2.15.3"
   }
 }
