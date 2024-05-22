@@ -1,6 +1,7 @@
-import { fetchEpisodeHandler } from '~core/queries/episodes/fetch-episode/fetch-episode.handler';
+import { fetchEpisodeHandler } from '~/core/queries/episodes/fetch-episode/fetch-episode.handler';
 import Router from '@koa/router';
 import type { RouterContext } from '@koa/router';
+import { FetchEpisodeError, FetchEpisodeFailureReason } from '~core/queries/episodes/fetch-episode/fetch-episode.error';
 
 export const retrieveEpisodeRouter = new Router();
 
@@ -20,6 +21,7 @@ retrieveEpisodeRouter.get('/:episodeId', (ctx: RouterContext): void => {
 			}
 		};
 	} catch (err) {
-		ctx.status = 404;
+		if (err instanceof FetchEpisodeError
+			&& err.failureReason === FetchEpisodeFailureReason.EPISODE_NOT_FOUND) ctx.status = 404;
 	}
 });
