@@ -1,4 +1,4 @@
-export type Episode = {
+export type EpisodeDto = {
 	id: string;
 	title: string;
 	releaseOrder: number;
