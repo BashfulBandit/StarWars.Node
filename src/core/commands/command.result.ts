@@ -1,4 +1,4 @@
-export abstract class QueryResult {
+export abstract class CommandResult {
 	succeeded: boolean;
 	error?: Error;
 
