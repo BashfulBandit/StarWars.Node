@@ -11,4 +11,8 @@ export class CalculatePopulationError extends Error {
 		super(message, options);
 		this.failureReason = options?.failureReason ?? CalculatePopulationFailureReason.FAULT;
 	}
+
+	static fault (message: string, options?: Readonly<ErrorOptions>): CalculatePopulationError {
+		return new CalculatePopulationError(message, { ...options, failureReason: CalculatePopulationFailureReason.FAULT });
+	}
 }
