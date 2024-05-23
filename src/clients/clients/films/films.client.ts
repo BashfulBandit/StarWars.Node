@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-magic-numbers */
 /* eslint-disable @typescript-eslint/prefer-readonly-parameter-types */
-import { buildException } from '~/clients/utilities/build-exception';
 import { DEFAULT_HEADERS } from '~/clients/swapi.client';
 import type { ListFilmsRequest } from '~/clients/requests/films/list.request';
 import type { ListFilmsResponse } from '~/clients/responses/films/list.response';
@@ -22,20 +21,18 @@ const retrieve = async (request: RetrieveFilmRequest): Promise<RetrieveFilmRespo
 		method: 'GET'
 	});
 
-	if (response.ok) return await response.json() as RetrieveFilmResponse;
-	throw await buildException(response);
+	return await response.json() as RetrieveFilmResponse;
 };
 
 const list = async (request: ListFilmsRequest): Promise<ListFilmsResponse> => {
-	const url = new URL(`${FILMS_BASE_URL}?page=${request.page}`);
+	const url = new URL(`${FILMS_BASE_URL}/?page=${request.page}`);
 
-	const response = await fetch(url, {
+	const response = await fetch(url.href, {
 		...DEFAULT_HEADERS,
 		method: 'GET'
 	});
 
-	if (response.ok) await response.json() as ListFilmsResponse;
-	throw await buildException(response);
+	return await response.json() as ListFilmsResponse;
 };
 
 export const filmsClient = {

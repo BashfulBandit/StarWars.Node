@@ -6,7 +6,7 @@ import { FetchEpisodeError, FetchEpisodeFailureReason } from '~/core/queries/epi
 import {
 	toQuery,
 	toResponse
-} from '~/mappings/films/retrieve.map';
+} from '~/mappings/episodes/retrieve.map';
 
 export const retrieveEpisodeRouter = new Router();
 
