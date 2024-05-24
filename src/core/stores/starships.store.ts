@@ -60,7 +60,7 @@ const list = async (filter: StarshipsSearchFilter): Promise<Page<Starship>> => {
 		const filtered = [...starships]
 			.filter(
 				// eslint-disable-next-line id-length
-				(s: ClientStarship): boolean => s.films.some(
+				(s: ClientStarship): boolean => s.pilots.some(
 					(url: string): boolean => parseId(url) === filter.characterId
 				)
 			)

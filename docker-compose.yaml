@@ -1,0 +1,15 @@
+name: starwars-node
+
+services:
+  starwars.node.api:
+    image: ghcr.io/bashfulbandit/starwars.node.api:latest
+    ports:
+      - 8080:8080
+    networks:
+      starwars.node.network:
+    healthcheck:
+      test: curl --fail http://localhost:8080/api/healthz || exit 1
+
+networks:
+  starwars.node.network:
+    name: ${STARWARS_ASPNET_NETWORK:-starwars.node.network}
