@@ -6,9 +6,10 @@ import type { RouterContext } from '@koa/router';
 import type { SpeciesSearchFilter } from '~/core/models/filters/species.filter';
 import { toDto as toDtoPagination } from '~/mappings/pagination.map';
 import { toDto as toDtoSpecies } from '~/mappings/episodes/species/species.map';
-
-const DEFAULT_PAGE_NUMBER = 1;
-const DEFAULT_PAGE_SIZE = 25;
+import {
+	DEFAULT_PAGE_NUMBER,
+	DEFAULT_PAGE_SIZE
+} from '~/globals/constants';
 
 const toFilter = (ctx: RouterContext): SpeciesSearchFilter => ({
 	episodeId: ctx.params.episodeId,

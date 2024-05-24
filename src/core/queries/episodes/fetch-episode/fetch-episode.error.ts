@@ -13,7 +13,7 @@ export class FetchEpisodeError extends Error {
 		this.failureReason = options?.failureReason ?? FetchEpisodeFailureReason.FAULT;
 	}
 
-	static fault (message: string, options?: Readonly<ErrorOptions>): FetchEpisodeError {
+	static fault (message?: string, options?: Readonly<ErrorOptions>): FetchEpisodeError {
 		return new FetchEpisodeError(message, { ...options, failureReason: FetchEpisodeFailureReason.FAULT });
 	}
 

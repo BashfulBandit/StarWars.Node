@@ -6,9 +6,10 @@ import type { ListEpisodesResult } from '~/core/queries/episodes/list-episodes/l
 import type { RouterContext } from '@koa/router';
 import { toDto as toDtoEpisode } from '~/mappings/episodes/episode.map';
 import { toDto as toDtoPagination } from '~/mappings/pagination.map';
-
-const DEFAULT_PAGE_NUMBER = 1;
-const DEFAULT_PAGE_SIZE = 25;
+import {
+	DEFAULT_PAGE_NUMBER,
+	DEFAULT_PAGE_SIZE
+} from '~/globals/constants';
 
 const toFilter = (ctx: RouterContext): EpisodesSearchfilter => ({
 	page: typeof ctx.query.page !== 'string' || isNaN(Number(ctx.query.page)) ? DEFAULT_PAGE_NUMBER : Number(ctx.query.page),

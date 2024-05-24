@@ -1,4 +1,4 @@
-export type Character = {
+export type CharacterDto = {
 	id: string;
 	name: string;
 	height: string;
