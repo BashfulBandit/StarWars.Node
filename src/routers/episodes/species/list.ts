@@ -1,11 +1,10 @@
 /* eslint-disable require-atomic-updates */
 import { listEpisodeSpeciesHandler } from '~/core/queries/episodes/species/list-episode-species/list-episode-species.handler';
-import Router from '@koa/router';
-import type { RouterContext } from '@koa/router';
 import {
 	ListEpisodeSpeciesError,
 	ListEpisodeSpeciesFailureReason
 } from '~/core/queries/episodes/species/list-episode-species/list-episode-species.error';
+import Router, { type RouterContext } from '@koa/router';
 import {
 	toQuery,
 	toResponse
