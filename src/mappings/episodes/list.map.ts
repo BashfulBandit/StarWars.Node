@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/prefer-readonly-parameter-types */
 import type { EpisodesSearchfilter } from '~/core/models/filters/episodes.filter';
 import type { ListEpisodes } from '~/core/queries/episodes/list-episodes/list-episodes.query';
 import type { ListEpisodesResponse } from '~/responses/episodes/list.response';

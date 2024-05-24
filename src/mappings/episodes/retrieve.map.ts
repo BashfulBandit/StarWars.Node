@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/prefer-readonly-parameter-types */
 import type { FetchEpisode } from '~/core/queries/episodes/fetch-episode/fetch-episode.query';
 import type { FetchEpisodeResult } from '~/core/queries/episodes/fetch-episode/fetch-episode.result';
 import type { RetrieveEpisodeResponse } from '~/responses/episodes/retrieve.response';

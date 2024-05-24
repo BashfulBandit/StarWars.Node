@@ -7,10 +7,8 @@ export const populationRouter = new Router({
 	prefix: '/population'
 });
 
-// eslint-disable-next-line @typescript-eslint/prefer-readonly-parameter-types
 populationRouter.get('/', async (ctx: RouterContext): Promise<void> => {
 	const result = await calculatePopulationHandler();
-	// eslint-disable-next-line @typescript-eslint/no-throw-literal
 	if (!result.succeeded) throw result.error;
 
 	ctx.status = 200;

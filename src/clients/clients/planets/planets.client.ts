@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/prefer-readonly-parameter-types */
+import { buildError } from '~/clients/utilities/build-error';
 import { DEFAULT_HEADERS } from '~/clients/swapi.client';
 import type { ListFilmsRequest } from '~/clients/requests/films/list.request';
 import type { ListPlanetsResponse } from '~/clients/responses/planets/list.response';
@@ -17,7 +17,8 @@ const list = async (request: ListFilmsRequest): Promise<ListPlanetsResponse> => 
 		method: 'GET'
 	});
 
-	return await response.json() as ListPlanetsResponse;
+	if (response.ok) return await response.json() as ListPlanetsResponse;
+	throw await buildError(response);
 };
 
 export const planetsClient = {

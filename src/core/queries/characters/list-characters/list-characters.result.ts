@@ -6,12 +6,12 @@ import { QueryResult } from '~/core/queries/query.result';
 export class ListCharactersResult extends QueryResult {
 	page: Page<Character> | null;
 
-	private constructor (page: Page<Character> | null, error?: Readonly<Error> | null) {
+	private constructor (page: Page<Character> | null, error?: Readonly<Error>) {
 		if (error) {
 			super(false, error);
 			this.page = null;
 		} else {
-			super(true);
+			super(true, error);
 			this.page = page;
 		}
 	}

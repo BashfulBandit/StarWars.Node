@@ -7,7 +7,7 @@ import type { Starship } from '~/core/models/starship';
 export class ListCharacterStarshipsResult extends QueryResult {
 	page: Page<Starship> | null;
 
-	private constructor (page: Page<Starship> | null, error?: Readonly<Error> | null) {
+	private constructor (page: Page<Starship> | null, error?: Readonly<Error>) {
 		if (error) {
 			super(false, error);
 			this.page = null;

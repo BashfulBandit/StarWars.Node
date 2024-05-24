@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/prefer-readonly-parameter-types */
 import type { CharactersSearchFilter } from '~/core/models/filters/characters.filter';
 import type { ListCharacters } from '~/core/queries/characters/list-characters/list-characters.query';
 import type { ListCharactersResponse } from '~/responses/characters/list.response';
@@ -13,7 +12,6 @@ import {
 
 const toFilter = (ctx: RouterContext): CharactersSearchFilter => ({
 	page: typeof ctx.query.page !== 'string' || isNaN(Number(ctx.query.page)) ? DEFAULT_PAGE_NUMBER : Number(ctx.query.page),
-	// eslint-disable-next-line @typescript-eslint/no-magic-numbers
 	pageSize: typeof ctx.query.pageSize !== 'string' && isNaN(Number(ctx.query.pageSize)) ? DEFAULT_PAGE_SIZE : Number(ctx.query.pageSize)
 });
 

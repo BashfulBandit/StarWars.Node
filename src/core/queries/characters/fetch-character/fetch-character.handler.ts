@@ -4,7 +4,7 @@ import { FetchCharacterError } from '~/core/queries/characters/fetch-character/f
 import { FetchCharacterResult } from '~/core/queries/characters/fetch-character/fetch-character.result';
 
 export const fetchCharacterHandler = async (
-	query: Readonly<FetchCharacter>
+	query: FetchCharacter
 ): Promise<FetchCharacterResult> => {
 	try {
 		const character = await charactersStore.fetch(query.characterId);

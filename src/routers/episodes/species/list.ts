@@ -1,4 +1,3 @@
-/* eslint-disable require-atomic-updates */
 import { listEpisodeSpeciesHandler } from '~/core/queries/episodes/species/list-episode-species/list-episode-species.handler';
 import {
 	ListEpisodeSpeciesError,
@@ -12,13 +11,12 @@ import {
 
 export const listEpisodeSpeciesRouter = new Router();
 
-// eslint-disable-next-line @typescript-eslint/prefer-readonly-parameter-types
 listEpisodeSpeciesRouter.get('/', async (ctx: RouterContext): Promise<void> => {
 	try {
 		const query = toQuery(ctx);
 		const result = await listEpisodeSpeciesHandler(query);
-		// eslint-disable-next-line @typescript-eslint/no-throw-literal
-		if (!result.succeeded) throw result.error;
+		if (!result.succeeded
+			&& result.error) throw result.error;
 
 		ctx.status = 200;
 		ctx.body = toResponse(result);

@@ -1,13 +1,17 @@
-/* eslint-disable @typescript-eslint/no-magic-numbers */
 import type { Page } from '~/core/models/page';
 import type { PaginationDto } from '~/models/pagination';
+import {
+	DEFAULT_PAGE_COUNT,
+	DEFAULT_PAGE_NUMBER,
+	DEFAULT_PAGE_SIZE,
+	DEFAULT_TOTAL_COUNT
+} from '~globals/constants';
 
-// eslint-disable-next-line @typescript-eslint/prefer-readonly-parameter-types
 export const toDto = (page: Page<unknown> | null): PaginationDto => ({
 	hasNext: page?.hasNext ?? false,
 	hasPrevious: page?.hasPrevious ?? false,
-	pageCount: page?.pageCount ?? 0,
-	pageNumber: page?.pageNumber ?? 1,
-	pageSize: page?.pageSize ?? 25,
-	totalCount: page?.totalCount ?? 0
+	pageCount: page?.pageCount ?? DEFAULT_PAGE_COUNT,
+	pageNumber: page?.pageNumber ?? DEFAULT_PAGE_NUMBER,
+	pageSize: page?.pageSize ?? DEFAULT_PAGE_SIZE,
+	totalCount: page?.totalCount ?? DEFAULT_TOTAL_COUNT
 });

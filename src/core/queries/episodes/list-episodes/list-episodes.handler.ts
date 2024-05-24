@@ -6,7 +6,6 @@ import type { QueryHandler } from '~/core/queries/query.handler';
 
 export type ListEpisodesHandler = QueryHandler<ListEpisodes, ListEpisodesResult>;
 
-// eslint-disable-next-line @typescript-eslint/prefer-readonly-parameter-types
 export const listEpisodesHandler = async (query: ListEpisodes): Promise<ListEpisodesResult> => {
 	try {
 		const page = await episodesStore.list(query.filter);

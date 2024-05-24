@@ -1,4 +1,3 @@
-/* eslint-disable require-atomic-updates */
 import { listCharacterStarshipsHandler } from '~/core/queries/characters/starships/list-character-starships/list-character-starships.handler';
 import {
 	ListCharacterStarshipsError,
@@ -12,13 +11,12 @@ import {
 
 export const listCharacterStarshipsRouter = new Router();
 
-// eslint-disable-next-line @typescript-eslint/prefer-readonly-parameter-types
 listCharacterStarshipsRouter.get('/', async (ctx: RouterContext): Promise<void> => {
 	try {
 		const query = toQuery(ctx);
 		const result = await listCharacterStarshipsHandler(query);
-		// eslint-disable-next-line @typescript-eslint/no-throw-literal
-		if (!result.succeeded) throw result.error;
+		if (!result.succeeded
+			&& result.error) throw result.error;
 
 		ctx.status = 200;
 		ctx.body = toResponse(result);

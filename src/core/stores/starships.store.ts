@@ -56,6 +56,8 @@ const list = async (filter: StarshipsSearchFilter): Promise<Page<Starship>> => {
 			...pages.map((value: ListStarshipsResponse) => value.results).flat(1)
 		);
 
+		// Just disabling this because the call to `filter` is only in place for if/when
+		// I want to add support for filtering by some property.
 		// eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
 		const filtered = [...starships]
 			.filter(

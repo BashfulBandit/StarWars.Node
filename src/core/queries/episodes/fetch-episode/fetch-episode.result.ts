@@ -5,7 +5,7 @@ import { QueryResult } from '~/core/queries/query.result';
 export class FetchEpisodeResult extends QueryResult {
 	episode: Episode | null;
 
-	private constructor (episode: Readonly<Episode> | null, error?: Readonly<Error> | null) {
+	private constructor (episode: Readonly<Episode> | null, error?: Readonly<Error>) {
 		if (error) {
 			super(false, error);
 			this.episode = null;

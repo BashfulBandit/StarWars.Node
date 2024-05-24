@@ -1,5 +1,4 @@
-/* eslint-disable @typescript-eslint/no-magic-numbers */
-/* eslint-disable @typescript-eslint/prefer-readonly-parameter-types */
+import { buildError } from '~/clients/utilities/build-error';
 import { DEFAULT_HEADERS } from '~/clients/swapi.client';
 import type { ListFilmsRequest } from '~/clients/requests/films/list.request';
 import type { ListFilmsResponse } from '~/clients/responses/films/list.response';
@@ -32,7 +31,8 @@ const list = async (request: ListFilmsRequest): Promise<ListFilmsResponse> => {
 		method: 'GET'
 	});
 
-	return await response.json() as ListFilmsResponse;
+	if (response.ok) return await response.json() as ListFilmsResponse;
+	throw await buildError(response);
 };
 
 export const filmsClient = {
