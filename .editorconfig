@@ -8,3 +8,6 @@ indent_style = tab
 indent_size = 2
 # (Please don't specify an indent_size here; that has too many unintended consequences.)
 guidelines = 80
+
+[*.yaml]
+indent_style = space

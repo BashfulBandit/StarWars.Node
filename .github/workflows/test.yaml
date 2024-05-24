@@ -1,0 +1,38 @@
+name: StarWars.Node Test Workflow
+
+on:
+  pull_request:
+    branches: [ dev ]
+
+jobs:
+  run-lint-audit-tests:
+    runs-on: ubunut-latest
+    steps:
+      - name: Checkout Repository...
+        uses: actions/checkout@v4
+      - name: Setup Node Environment...
+        uses: actions/setup-node@v4
+      - name: Install Dependencies...
+        run: npm ci
+      - name: Linting...
+        run: npm run lint
+      - name: Auditing...
+        run: npm audit
+      - name: Testing...
+        run: npm run test
+
+  run-docker-build-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository...
+        uses: actions/checkout@v4
+      - name: Setup Docker Environment...
+        uses: docker/setup-buildx-action@v3
+      - name: Build Docker image...
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          # This is just a test build to ensure the build process works. This
+          # stops from pushing after a successful build.
+          push: false
+          file: ./Dockerfile
