@@ -46,56 +46,51 @@ Query Parameters:
 - `page` - Defaults to `1`.
 - `pageSize` - Defaults to `25`.
 
-```json
-{
-  "starships": [
-    {
-      "id": "12",
-      "name": "X-wing",
-      "model": "T-65 X-wing",
-      "starshipClass": "Starfighter",
-      "manufacturer": [
-        "Incom Corporation"
-      ],
-      "costInCredits": "149999",
-      "length": "12.5",
-      "crew": "1",
-      "passengers": "0",
-      "maxAtmospheringSpeed": "1050",
-      "mglt": "100",
-      "cargoCapacity": "110",
-      "consumables": "1 week",
-      "createdAt": "2014-12-12T11:19:05.34Z",
-      "updatedAt": "2014-12-20T21:23:49.886Z"
-    },
-    {
-      "id": "22",
-      "name": "Imperial shuttle",
-      "model": "Lambda-class T-4a shuttle",
-      "starshipClass": "Armed government transport",
-      "manufacturer": [
-        "Sienar Fleet Systems"
-      ],
-      "costInCredits": "240000",
-      "length": "20",
-      "crew": "6",
-      "passengers": "20",
-      "maxAtmospheringSpeed": "850",
-      "mglt": "50",
-      "cargoCapacity": "80000",
-      "consumables": "2 months",
-      "createdAt": "2014-12-15T13:04:47.235Z",
-      "updatedAt": "2014-12-20T21:23:49.9Z"
-    }
-  ],
-  "pagination": {
-    "pageNumber": 1,
-    "pageSize": 25,
-    "pageCount": 1,
-    "totalCount": 2,
-    "hasPrevious": false,
-    "hasNext": false
-  }
+```json{
+	"pagination": {
+		"hasNext": false,
+		"hasPrevious": false,
+		"pageCount": 1,
+		"pageNumber": 1,
+		"pageSize": 25,
+		"totalCount": 2
+	},
+	"species": [
+		{
+			"MGLT": "100",
+			"cargoCapacity": "110",
+			"consumables": "1 week",
+			"costInCredits": "149999",
+			"createdAt": "2014-12-12T11:19:05.340000Z",
+			"crew": "1",
+			"hyperdriveRating": "1.0",
+			"id": "12",
+			"length": "12.5",
+			"manufacturers": [
+					"Incom Corporation"
+			],
+			"name": "X-wing",
+			"passengers": "0",
+			"updatedAt": "2014-12-20T21:23:49.886000Z"
+		},
+		{
+			"MGLT": "50",
+			"cargoCapacity": "80000",
+			"consumables": "2 months",
+			"costInCredits": "240000",
+			"createdAt": "2014-12-15T13:04:47.235000Z",
+			"crew": "6",
+			"hyperdriveRating": "1.0",
+			"id": "22",
+			"length": "20",
+			"manufacturers": [
+					"Sienar Fleet Systems"
+			],
+			"name": "Imperial shuttle",
+			"passengers": "20",
+			"updatedAt": "2014-12-20T21:23:49.900000Z"
+		}
+	]
 }
 ```
 
@@ -113,137 +108,137 @@ Query Parameters:
 
 ```json
 {
-  "species": [
-    {
-      "id": "1",
-      "name": "Human",
-      "classification": "mammal",
-      "designation": "sentient",
-      "averageHeight": "180",
-      "averageLifespan": "120",
-      "eyeColors": [
-        "brown",
-        "blue",
-        "green",
-        "hazel",
-        "grey",
-        "amber"
-      ],
-      "hairColors": [
-        "blonde",
-        "brown",
-        "black",
-        "red"
-      ],
-      "skinColors": [
-        "caucasian",
-        "black",
-        "asian",
-        "hispanic"
-      ],
-      "language": "Galactic Basic",
-      "createdAt": "2014-12-10T13:52:11.567Z",
-      "updatedAt": "2014-12-20T21:36:42.136Z"
-    },
-    {
-      "id": "2",
-      "name": "Droid",
-      "classification": "artificial",
-      "designation": "sentient",
-      "averageHeight": "n/a",
-      "averageLifespan": "indefinite",
-      "eyeColors": [
-        "n/a"
-      ],
-      "hairColors": [
-        "n/a"
-      ],
-      "skinColors": [
-        "n/a"
-      ],
-      "language": "n/a",
-      "createdAt": "2014-12-10T15:16:16.259Z",
-      "updatedAt": "2014-12-20T21:36:42.139Z"
-    },
-    {
-      "id": "3",
-      "name": "Wookie",
-      "classification": "mammal",
-      "designation": "sentient",
-      "averageHeight": "210",
-      "averageLifespan": "400",
-      "eyeColors": [
-        "blue",
-        "green",
-        "yellow",
-        "brown",
-        "golden",
-        "red"
-      ],
-      "hairColors": [
-        "black",
-        "brown"
-      ],
-      "skinColors": [
-        "gray"
-      ],
-      "language": "Shyriiwook",
-      "createdAt": "2014-12-10T16:44:31.486Z",
-      "updatedAt": "2014-12-20T21:36:42.142Z"
-    },
-    {
-      "id": "4",
-      "name": "Rodian",
-      "classification": "sentient",
-      "designation": "reptilian",
-      "averageHeight": "170",
-      "averageLifespan": "unknown",
-      "eyeColors": [
-        "black"
-      ],
-      "hairColors": [
-        "n/a"
-      ],
-      "skinColors": [
-        "green",
-        "blue"
-      ],
-      "language": "Galatic Basic",
-      "createdAt": "2014-12-10T17:05:26.471Z",
-      "updatedAt": "2014-12-20T21:36:42.144Z"
-    },
-    {
-      "id": "5",
-      "name": "Hutt",
-      "classification": "gastropod",
-      "designation": "sentient",
-      "averageHeight": "300",
-      "averageLifespan": "1000",
-      "eyeColors": [
-        "yellow",
-        "red"
-      ],
-      "hairColors": [
-        "n/a"
-      ],
-      "skinColors": [
-        "green",
-        "brown",
-        "tan"
-      ],
-      "language": "Huttese",
-      "createdAt": "2014-12-10T17:12:50.41Z",
-      "updatedAt": "2014-12-20T21:36:42.146Z"
-    }
-  ],
-  "pagination": {
-    "pageNumber": 1,
-    "pageSize": 25,
-    "pageCount": 1,
-    "totalCount": 5,
-    "hasPrevious": false,
-    "hasNext": false
-  }
+	"pagination": {
+		"hasNext": false,
+		"hasPrevious": false,
+		"pageCount": 1,
+		"pageNumber": 1,
+		"pageSize": 25,
+		"totalCount": 5
+	},
+	"species": [
+		{
+			"averageHeight": "180",
+			"averageLifespan": "120",
+			"classification": "mammal",
+			"createdAt": "2014-12-10T13:52:11.567000Z",
+			"designation": "sentient",
+			"eyeColors": [
+				"brown",
+				"blue",
+				"green",
+				"hazel",
+				"grey",
+				"amber"
+			],
+			"hairColors": [
+				"blonde",
+				"brown",
+				"black",
+				"red"
+			],
+			"id": "1",
+			"language": "Galactic Basic",
+			"name": "Human",
+			"skinColors": [
+				"caucasian",
+				"black",
+				"asian",
+				"hispanic"
+			],
+			"updatedAt": "2014-12-20T21:36:42.136000Z"
+		},
+		{
+			"averageHeight": "n/a",
+			"averageLifespan": "indefinite",
+			"classification": "artificial",
+			"createdAt": "2014-12-10T15:16:16.259000Z",
+			"designation": "sentient",
+			"eyeColors": [
+				"n/a"
+			],
+			"hairColors": [
+				"n/a"
+			],
+			"id": "2",
+			"language": "n/a",
+			"name": "Droid",
+			"skinColors": [
+				"n/a"
+			],
+			"updatedAt": "2014-12-20T21:36:42.139000Z"
+		},
+		{
+			"averageHeight": "210",
+			"averageLifespan": "400",
+			"classification": "mammal",
+			"createdAt": "2014-12-10T16:44:31.486000Z",
+			"designation": "sentient",
+			"eyeColors": [
+				"blue",
+				"green",
+				"yellow",
+				"brown",
+				"golden",
+				"red"
+			],
+			"hairColors": [
+					"black",
+					"brown"
+			],
+			"id": "3",
+			"language": "Shyriiwook",
+			"name": "Wookie",
+			"skinColors": [
+				"gray"
+			],
+			"updatedAt": "2014-12-20T21:36:42.142000Z"
+		},
+		{
+			"averageHeight": "170",
+			"averageLifespan": "unknown",
+			"classification": "sentient",
+			"createdAt": "2014-12-10T17:05:26.471000Z",
+			"designation": "reptilian",
+			"eyeColors": [
+				"black"
+			],
+			"hairColors": [
+				"n/a"
+			],
+			"id": "4",
+			"language": "Galatic Basic",
+			"name": "Rodian",
+			"skinColors": [
+				"green",
+				"blue"
+			],
+			"updatedAt": "2014-12-20T21:36:42.144000Z"
+		},
+		{
+			"averageHeight": "300",
+			"averageLifespan": "1000",
+			"classification": "gastropod",
+			"createdAt": "2014-12-10T17:12:50.410000Z",
+			"designation": "sentient",
+			"eyeColors": [
+				"yellow",
+				"red"
+			],
+			"hairColors": [
+				"n/a"
+			],
+			"id": "5",
+			"language": "Huttese",
+			"name": "Hutt",
+			"skinColors": [
+				"green",
+				"brown",
+				"tan"
+			],
+			"updatedAt": "2014-12-20T21:36:42.146000Z"
+		}
+	]
 }
 ```
 
@@ -253,7 +248,7 @@ Query Parameters:
 
 ```json
 {
-    "population": 1711401432500
+  "population": 1711401432500
 }
 ```
 
