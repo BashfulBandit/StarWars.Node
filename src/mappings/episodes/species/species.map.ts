@@ -1,6 +1,13 @@
 import type { Species } from '~/core/models/species';
 import type { SpeciesDto } from '~/models/species';
 
+/**
+ * Function to map a Species to a SpeciesDto.
+ *
+ * @param model - Species
+ *
+ * @returns SpeciesDto
+ */
 export const toDto = (model: Species): SpeciesDto => ({
 	averageHeight: model.averageHeight,
 	averageLifespan: model.averageLifespan,

@@ -98,7 +98,7 @@ Query Parameters:
 
 #2 - Return the classification of all species in the 1st episode
 
-1st Star Wars episode `episodeId` is `1`. If you go by release order a.k.a. The Good Hope.
+1st Star Wars episode `episodeId` is `1`. If you go by release order a.k.a. The New Hope.
 1st Star Wars episode `episodeId` is `4`. If you go by episode order a.k.a. The Phantom Menace.
 
 Query Parameters:

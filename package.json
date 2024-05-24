@@ -1,18 +1,20 @@
 {
   "name": "@bashfulbandit/starwars.node.api",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "A Star Wars REST API to retrieving Star Wars universe data.",
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "build": "rimraf ./dist && node build.js",
+    "build": "npm run type-check && node build.js",
     "start": "nodemon dist/index.cjs",
+    "serve": "npm run build && npm run start",
     "lint": "eslint .",
-    "test": "echo \"Error: no test specified\" && exit 0"
+    "test": "npm run lint && npm run type-check",
+    "type-check": "tsc --noEmit"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Davis Templeton",
+  "license": "GPL-3.0",
   "devDependencies": {
     "@gabegabegabe/eslint-config": "^9.0.0-alpha4",
     "@gabegabegabe/tsconfig": "^4.0.0",
@@ -27,10 +29,12 @@
     "eslint-plugin-json": "^3.1.0",
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-tsdoc": "^0.2.17",
-    "nodemon": "^3.1.0"
+    "nodemon": "^3.1.0",
+    "tsc-alias": "^1.8.10"
   },
   "dependencies": {
     "@koa/router": "^12.0.1",
+    "consola": "^3.2.3",
     "koa": "^2.15.3"
   }
 }

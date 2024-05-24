@@ -16,11 +16,25 @@ const toFilter = (ctx: RouterContext): SpeciesSearchFilter => ({
 	pageSize: typeof ctx.query.pageSize !== 'string' && isNaN(Number(ctx.query.pageSize)) ? DEFAULT_PAGE_SIZE : Number(ctx.query.pageSize)
 });
 
+/**
+ * Function to map a Koa.RouterContext to a ListEpisodeSpecies query.
+ *
+ * @param ctx - RouterContext
+ *
+ * @returns ListEpisodeSpecies
+ */
 export const toQuery = (ctx: RouterContext): ListEpisodeSpecies => ({
 	filter: toFilter(ctx)
 });
 
+/**
+ * Function to map a ListEpisodeSpeciesResult to a ListEpisodeSpeciesResponse.
+ *
+ * @param result - ListEpisodeSpeciesResult
+ *
+ * @returns ListEpisodeSpeciesResponse
+ */
 export const toResponse = (result: ListEpisodeSpeciesResult): ListEpisodeSpeciesResponse => ({
-	pagination: toDtoPagination(result.page),
-	species: result.page?.items.map(toDtoSpecies) ?? []
+	species: result.page?.items.map(toDtoSpecies) ?? [],
+	pagination: toDtoPagination(result.page)
 });

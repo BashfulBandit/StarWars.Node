@@ -16,11 +16,25 @@ const toFilter = (ctx: RouterContext): EpisodesSearchfilter => ({
 	pageSize: typeof ctx.query.pageSize !== 'string' && isNaN(Number(ctx.query.pageSize)) ? DEFAULT_PAGE_SIZE : Number(ctx.query.pageSize)
 });
 
+/**
+ * Function to map a Koa.RouterContext to a ListEpisodes query.
+ *
+ * @param ctx - RouterContext
+ *
+ * @returns ListEpisodes
+ */
 export const toQuery = (ctx: RouterContext): ListEpisodes => ({
 	filter: toFilter(ctx)
 });
 
+/**
+ * Function to map a ListEpisodesResult to a ListEpisodeResponse.
+ *
+ * @param result - ListEpisodesResult
+ *
+ * @returns ListEpisodesResponse
+ */
 export const toResponse = (result: ListEpisodesResult): ListEpisodesResponse => ({
-	pagination: toDtoPagination(result.page),
-	episodes: result.page?.items.map(toDtoEpisode) ?? []
+	episodes: result.page?.items.map(toDtoEpisode) ?? [],
+	pagination: toDtoPagination(result.page)
 });

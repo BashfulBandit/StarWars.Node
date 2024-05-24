@@ -1,4 +1,4 @@
-import { listEpisodeSpeciesRouter } from './list';
+import { listEpisodeSpeciesRouter } from '~/routers/episodes/species/list';
 import Router from '@koa/router';
 
 export const episodeSpeciesRouter = new Router({

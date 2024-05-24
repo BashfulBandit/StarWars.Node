@@ -5,8 +5,15 @@ import {
 	DEFAULT_PAGE_NUMBER,
 	DEFAULT_PAGE_SIZE,
 	DEFAULT_TOTAL_COUNT
-} from '~globals/constants';
+} from '~/globals/constants';
 
+/**
+ * Function to map a Page to a PaginationDto.
+ *
+ * @param page - Page
+ *
+ * @returns PaginationDto
+ */
 export const toDto = (page: Page<unknown> | null): PaginationDto => ({
 	hasNext: page?.hasNext ?? false,
 	hasPrevious: page?.hasPrevious ?? false,

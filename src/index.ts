@@ -1,5 +1,6 @@
 import { apiRouter } from '~/routers/api';
 import Koa from 'koa';
+import { logger } from '~/logging/logger';
 import { PORT } from '~/globals/environment';
 
 const app = new Koa();
@@ -7,6 +8,5 @@ const app = new Koa();
 app.use(apiRouter.routes());
 
 app.listen(PORT, () => {
-	// eslint-disable-next-line no-console
-	console.log(`Star Wars API listening on port ${PORT}`);
+	logger.success(`Star Wars API listening on port ${PORT}`);
 });

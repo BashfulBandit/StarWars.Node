@@ -6,11 +6,32 @@ import type { Page } from '~/core/models/page';
 import { parseId } from '~/core/utilities/parse-id';
 import { swApiClient } from '~/clients/swapi.client';
 
-export type EpisodeStore = {
+/**
+ * Describes a store to manage the Episode resources.
+ */
+export type EpisodesStore = {
+	/**
+	 * Function to fetch a Episode from storage.
+	 *
+	 * @param episodeId - string
+	 *
+	 * @returns Promise\<Episode | null\>
+	 */
 	fetch: (episodeId: string) => Promise<Episode | null>;
+
+	/**
+	 * Function to get a page of Episodes from storage.
+	 *
+	 * @param filter - EpisodesSearchfilter
+	 *
+	 * @returns Promise\<Page<Episode>\>
+	 */
 	list: (filter: EpisodesSearchfilter) => Promise<Page<Episode>>;
 };
 
+/**
+ * Desribes a error thrown by the EpisodesStore on a failed operation.
+ */
 export class EpisodeStoreError extends Error {}
 
 const mapClientToCore = (film: Film): Episode => ({

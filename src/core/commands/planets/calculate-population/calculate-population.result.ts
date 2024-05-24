@@ -1,5 +1,8 @@
 import { CommandResult } from '~/core/commands/command.result';
 
+/**
+ * Describes the result of processing a command to calculate the population of the known Star Wars universe.
+ */
 export class CalculatePopulationResult extends CommandResult {
 	readonly population: number | null;
 

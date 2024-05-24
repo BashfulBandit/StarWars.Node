@@ -15,7 +15,6 @@ const apiRouters: Router[] = [
 	populationRouter
 ] as const satisfies Router[];
 
-// eslint-disable-next-line @typescript-eslint/prefer-readonly-parameter-types
 apiRouters.forEach((router: Router) => {
 	apiRouter.use(router.routes());
 });

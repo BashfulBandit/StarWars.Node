@@ -6,11 +6,32 @@ import { parseId } from '~/core/utilities/parse-id';
 import type { Person } from '~/clients/models/person';
 import { swApiClient } from '~/clients/swapi.client';
 
+/**
+ * Describes a store to manage the Character resources.
+ */
 export type CharactersStore = {
+	/**
+	 * Function to fetch a Character from storage.
+	 *
+	 * @param characterId - string
+	 *
+	 * @returns Promise\<Character | null\>
+	 */
 	fetch: (characterId: string) => Promise<Character | null>;
+
+	/**
+	 * Function to get a page of Characters from storage.
+	 *
+	 * @param filter - CharactersSearchFilter
+	 *
+	 * @returns Promise\<Page<Character>\>
+	 */
 	list: (filter: CharactersSearchFilter) => Promise<Page<Character>>;
 };
 
+/**
+ * Desribes a error thrown by the CharactersStore on a failed operation.
+ */
 export class CharactersStoreError extends Error {}
 
 const mapClientToCore = (person: Person): Character => ({

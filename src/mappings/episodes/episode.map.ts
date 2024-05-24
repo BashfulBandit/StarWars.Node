@@ -1,7 +1,14 @@
 import type { Episode } from '~/core/models/episode';
 import type { EpisodeDto } from '~/models/episode';
 
-export const toDto = (model: Readonly<Episode>): EpisodeDto => ({
+/**
+ * Function to map a Episode to a EpisodeDto.
+ *
+ * @param model - Episode
+ *
+ * @returns EpisodeDto
+ */
+export const toDto = (model: Episode): EpisodeDto => ({
 	createdAt: model.createdAt,
 	director: model.director,
 	id: model.id,
