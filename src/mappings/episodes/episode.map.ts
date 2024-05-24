@@ -1,8 +1,7 @@
 import type { Episode } from '~/core/models/episode';
 import type { EpisodeDto } from '~/models/episode';
 
-// eslint-disable-next-line @typescript-eslint/prefer-readonly-parameter-types
-export const toDto = (model: Episode): EpisodeDto => ({
+export const toDto = (model: Readonly<Episode>): EpisodeDto => ({
 	createdAt: model.createdAt,
 	director: model.director,
 	id: model.id,

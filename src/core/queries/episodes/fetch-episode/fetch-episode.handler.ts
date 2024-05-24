@@ -6,7 +6,9 @@ import type { QueryHandler } from '~/core/queries/query.handler';
 
 export type FetchEpisodeHandler = QueryHandler<FetchEpisode, FetchEpisodeResult>;
 
-export const fetchEpisodeHandler = async (query: Readonly<FetchEpisode>): Promise<FetchEpisodeResult> => {
+export const fetchEpisodeHandler = async (
+	query: Readonly<FetchEpisode>
+): Promise<FetchEpisodeResult> => {
 	try {
 		const episode = await episodesStore.fetch(query.episodeId);
 		if (episode === null) return FetchEpisodeResult.notFound(query.episodeId);

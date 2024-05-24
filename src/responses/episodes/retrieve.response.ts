@@ -1,5 +1,5 @@
-import type { Episode } from '~/core/models/episode';
+import type { EpisodeDto } from '~/models/episode';
 
 export type RetrieveEpisodeResponse = {
-	episode: Episode | null;
+	episode: EpisodeDto | null;
 };
