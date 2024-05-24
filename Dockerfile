@@ -10,4 +10,4 @@ FROM base AS release
 LABEL "org.opencontainers.image.source"="https://github.com/BashfulBandit/StarWars.Node"
 COPY --from=build /app/dist .
 HEALTHCHECK CMD curl --fail http://localhost:8080/api/healthz || exit 1
-ENTRYPOINT [ "node", "./index.js" ]
+ENTRYPOINT [ "node", "./index.cjs" ]

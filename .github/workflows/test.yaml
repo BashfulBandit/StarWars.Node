@@ -1,4 +1,4 @@
-name: StarWars.Node Test Workflow
+name: StarWars.Node.Api Test Workflow
 
 on:
   pull_request:
@@ -6,7 +6,7 @@ on:
 
 jobs:
   run-lint-audit-tests:
-    runs-on: ubunut-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository...
         uses: actions/checkout@v4
