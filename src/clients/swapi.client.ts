@@ -1,7 +1,6 @@
-import { filmsClient } from '~/clients/clients/films/films.client';
-import type { FilmsClient } from '~/clients/clients/films/films.client';
-import { planetsClient } from '~/clients/clients/planets/planets.client';
-import type { PlanetsClient } from '~/clients/clients/planets/planets.client';
+import { type FilmsClient, filmsClient } from '~/clients/clients/films/films.client';
+import { type PlanetsClient, planetsClient } from '~/clients/clients/planets/planets.client';
+import { type SpeciesClient, speciesClient } from '~/clients/clients/species/species.client';
 
 export const DEFAULT_HEADERS = {
 	headers: {
@@ -12,9 +11,11 @@ export const DEFAULT_HEADERS = {
 export type SWApiClient = {
 	films: FilmsClient;
 	planets: PlanetsClient;
+	species: SpeciesClient;
 };
 
 export const swApiClient = {
 	films: filmsClient,
-	planets: planetsClient
+	planets: planetsClient,
+	species: speciesClient
 };

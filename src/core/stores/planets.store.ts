@@ -40,7 +40,7 @@ const list = async (filter: PlanetsSearchFilter): Promise<Page<CorePlanet>> => {
 			page: 1
 		});
 
-		const pagePromises = new Array((count - results.length) / results.length)
+		const pagePromises = new Array(Math.ceil((count - results.length) / results.length))
 			.fill(null)
 			.map(async (_value, index: number) => swApiClient.planets.list({
 				// eslint-disable-next-line @typescript-eslint/no-magic-numbers
@@ -66,7 +66,7 @@ const list = async (filter: PlanetsSearchFilter): Promise<Page<CorePlanet>> => {
 			pageCount: Math.ceil(filtered.length / filter.pageSize),
 			pageNumber: Math.max(1, filter.page),
 			pageSize: Math.min(Number.MAX_SAFE_INTEGER, Math.max(1, filter.pageSize)),
-			totalCount: Math.max(0, planets.length)
+			totalCount: Math.max(0, filtered.length)
 		};
 	} catch (err) {
 		throw new PlanetsStoreError(`Error fetching page of Planets ${JSON.stringify(filter)}.`, { cause: err });
