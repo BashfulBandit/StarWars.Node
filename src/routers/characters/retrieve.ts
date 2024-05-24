@@ -2,7 +2,7 @@
 import { fetchCharacterHandler } from '~/core/queries/characters/fetch-character/fetch-character.handler';
 import Router from '@koa/router';
 import type { RouterContext } from '@koa/router';
-import { FetchCharacterError, FetchCharacterFailureReason } from '~core/queries/characters/fetch-character/fetch-character.error';
+import { FetchCharacterError, FetchCharacterFailureReason } from '~/core/queries/characters/fetch-character/fetch-character.error';
 import {
 	toQuery,
 	toResponse

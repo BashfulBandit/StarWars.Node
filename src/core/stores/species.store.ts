@@ -7,10 +7,24 @@ import { parseId } from '~/core/utilities/parse-id';
 import type { SpeciesSearchFilter } from '~/core/models/filters/species.filter';
 import { swApiClient } from '~/clients/swapi.client';
 
+/**
+ * Describes a store to manage the Species resources.
+ */
 export type SpeciesStore = {
+
+	/**
+	 * Function to get a page of Species from storage.
+	 *
+	 * @param filter - SpeciesSearchFilter
+	 *
+	 * @returns Promise\<Page<Species>\>
+	 */
 	list: (filter: SpeciesSearchFilter) => Promise<Page<CoreSpecies>>;
 };
 
+/**
+ * Desribes a error thrown by the SpeciesStore on a failed operation.
+ */
 export class SpeciesStoreError extends Error {}
 
 const mapClientToCore = (clientSpecies: ClientSpecies): CoreSpecies => ({

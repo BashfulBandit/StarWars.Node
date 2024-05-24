@@ -15,11 +15,25 @@ const toFilter = (ctx: RouterContext): CharactersSearchFilter => ({
 	pageSize: typeof ctx.query.pageSize !== 'string' && isNaN(Number(ctx.query.pageSize)) ? DEFAULT_PAGE_SIZE : Number(ctx.query.pageSize)
 });
 
+/**
+ * Function to map a Koa.RouterContext to a ListCharacters query.
+ *
+ * @param ctx - RouterContext
+ *
+ * @returns - ListCharacters
+ */
 export const toQuery = (ctx: RouterContext): ListCharacters => ({
 	filter: toFilter(ctx)
 });
 
+/**
+ * Function to map a ListCharactersResult to a ListCharactersResponse.
+ *
+ * @param result - ListCharactersResult
+ *
+ * @returns ListCharactersResponse
+ */
 export const toResponse = (result: ListCharactersResult): ListCharactersResponse => ({
-	pagination: toDtoPagination(result.page),
-	characters: result.page?.items.map(toDtoCharacter) ?? []
+	characters: result.page?.items.map(toDtoCharacter) ?? [],
+	pagination: toDtoPagination(result.page)
 });

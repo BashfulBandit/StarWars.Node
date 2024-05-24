@@ -1,6 +1,13 @@
 import type { Starship } from '~/core/models/starship';
 import type { StarshipDto } from '~/models/starship';
 
+/**
+ * Function to map a Starship to a StarshipDto.
+ *
+ * @param model - Starship
+ *
+ * @returns StarshipDto
+ */
 export const toDto = (model: Starship): StarshipDto => ({
 	MGLT: model.MGLT,
 	cargoCapacity: model.cargoCapacity,
@@ -13,6 +20,7 @@ export const toDto = (model: Starship): StarshipDto => ({
 	length: model.length,
 	manufacturers: model.manufacturers,
 	maxAtomispheringSpeed: model.maxAtomispheringSpeed,
+	model: model.model,
 	name: model.name,
 	passengers: model.passengers,
 	starshipClass: model.starshipClass,

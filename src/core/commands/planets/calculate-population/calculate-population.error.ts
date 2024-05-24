@@ -1,7 +1,13 @@
+/**
+ * Enumeration for failure reasons from handling a command to calculate the known Star Wars universe.
+ */
 export enum CalculatePopulationFailureReason {
 	FAULT = 'Fault'
 }
 
+/**
+ * Describes an error returned from the calculating of the known Star Wars universe.
+ */
 export class CalculatePopulationError extends Error {
 	readonly failureReason: CalculatePopulationFailureReason;
 

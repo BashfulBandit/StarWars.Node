@@ -26,6 +26,7 @@ const mapClientToCore = (clientStarship: ClientStarship): CoreStarship => ({
 	length: clientStarship.length,
 	manufacturers: clientStarship.manufacturer.split(',').map((manufacturer: string): string => manufacturer.trim()),
 	maxAtomispheringSpeed: clientStarship.max_atomosphering_speed,
+	model: clientStarship.model,
 	name: clientStarship.name,
 	passengers: clientStarship.passengers,
 	starshipClass: clientStarship.startship_class,

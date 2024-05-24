@@ -10,11 +10,35 @@ export const DEFAULT_HEADERS = {
 	}
 };
 
+/**
+ * Describes a client to interact with the SW API Resources.
+ *
+ * @public
+ */
 export type SWApiClient = {
+	/**
+	 * A client to interact with the Films resources.
+	 */
 	films: FilmsClient;
+
+	/**
+	 * A client to interact with the Planets resources.
+	 */
 	planets: PlanetsClient;
+
+	/**
+	 * A client to interact with the Species resources.
+	 */
 	species: SpeciesClient;
+
+	/**
+	 * A client to interact with the Starships resources.
+	 */
 	starships: StarshipsClient;
+
+	/**
+	 * A client to interact with the People resources.
+	 */
 	people: PeopleClient;
 };
 

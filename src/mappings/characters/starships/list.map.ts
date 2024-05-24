@@ -16,11 +16,25 @@ const toFilter = (ctx: RouterContext): StarshipsSearchFilter => ({
 	pageSize: typeof ctx.query.pageSize !== 'string' && isNaN(Number(ctx.query.pageSize)) ? DEFAULT_PAGE_SIZE : Number(ctx.query.pageSize)
 });
 
+/**
+ * Function to map a Koa.RouterContext to a ListCharacterStarships query.
+ *
+ * @param ctx - RouterContext
+ *
+ * @returns ListCharacterStarships
+ */
 export const toQuery = (ctx: RouterContext): ListCharacterStarships => ({
 	filter: toFilter(ctx)
 });
 
+/**
+ * Function to map a ListCharacterStarshipsResult to a ListCharacterStarshipsResponse.
+ *
+ * @param result - ListCharacterStarshipsResult
+ *
+ * @returns ListCharacterStarshipsResponse
+ */
 export const toResponse = (result: ListCharacterStarshipsResult): ListCharacterStarshipsResponse => ({
-	pagination: toDtoPagination(result.page),
-	species: result.page?.items.map(toDtoStarship) ?? []
+	species: result.page?.items.map(toDtoStarship) ?? [],
+	pagination: toDtoPagination(result.page)
 });

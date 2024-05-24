@@ -6,10 +6,24 @@ import { parseId } from '~/core/utilities/parse-id';
 import type { PlanetsSearchFilter } from '~/core/models/filters/planets.filter';
 import { swApiClient } from '~/clients/swapi.client';
 
+/**
+ * Describes a store to manage the Planet resources.
+ */
 export type PlanetsStore = {
+
+	/**
+	 * Function to get a page of Characters from storage.
+	 *
+	 * @param filter - PlanetsSearchFilter
+	 *
+	 * @returns Promise\<Page<Planet>\>
+	 */
 	list: (filter: PlanetsSearchFilter) => Promise<Page<CorePlanet>>;
 };
 
+/**
+ * Desribes a error thrown by the PlanetsStore on a failed operation.
+ */
 export class PlanetsStoreError extends Error {}
 
 const mapClientToCore = (clientPlanet: ClientPlanet): CorePlanet => ({

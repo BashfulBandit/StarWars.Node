@@ -1,3 +1,6 @@
+/**
+ * Describes a base result from processing a CQRS Command.
+ */
 export abstract class CommandResult {
 	succeeded: boolean;
 	error: Error;

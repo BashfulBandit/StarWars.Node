@@ -1,6 +1,7 @@
 export type Starship = {
 	id: string;
 	name: string;
+	model: string;
 	starshipClass: string;
 	manufacturers: string[];
 	costInCredits: string;
