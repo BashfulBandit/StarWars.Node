@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/prefer-readonly-parameter-types */
+import { buildError } from '~/clients/utilities/build-error';
 import { DEFAULT_HEADERS } from '~/clients/swapi.client';
 import type { ListPeopleRequest } from '~/clients/requests/people/list.request';
 import type { ListPeopleResponse } from '~/clients/responses/people/list.response';
@@ -31,7 +31,8 @@ const list = async (request: ListPeopleRequest): Promise<ListPeopleResponse> => 
 		method: 'GET'
 	});
 
-	return await response.json() as ListPeopleResponse;
+	if (response.ok) return await response.json() as ListPeopleResponse;
+	throw await buildError(response);
 };
 
 export const peopleClient = {

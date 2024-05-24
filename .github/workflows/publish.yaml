@@ -27,4 +27,4 @@ jobs:
           context: .
           push: true
           file: ./Dockerfile
-          tags: ghcr.io/bashfulbandit/starwars.node.api:latest,ghcr.io/bashfulbandit/starwars.node.api:1.0.1
+          tags: ghcr.io/bashfulbandit/starwars.node.api:latest,ghcr.io/bashfulbandit/starwars.node.api:1.0.3

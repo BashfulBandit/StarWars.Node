@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-/* eslint-disable @typescript-eslint/prefer-readonly-parameter-types */
 import type { Species as ClientSpecies } from '~/clients/models/species';
 import type { Species as CoreSpecies } from '~/core/models/species';
 import type { ListSpeciesResponse } from '~/clients/responses/species/list.response';
@@ -53,10 +52,11 @@ const list = async (filter: SpeciesSearchFilter): Promise<Page<CoreSpecies>> => 
 			...pages.map((value: ListSpeciesResponse) => value.results).flat(1)
 		);
 
+		// Just disabling this because the call to `filter` is only in place for if/when
+		// I want to add support for filtering by some property.
 		// eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
 		const filtered = [...species]
 			.filter(
-				// eslint-disable-next-line id-length
 				(s: ClientSpecies): boolean => s.films.some(
 					(url: string): boolean => parseId(url) === filter.episodeId
 				)

@@ -46,5 +46,13 @@ export default [
 	{
 		files: [...TEST_FILES],
 		...jestTsConfig
+	},
+	{
+		files: ['src/**/*.ts'],
+		rules: {
+			'@typescript-eslint/prefer-readonly-parameter-types': 0,
+			'id-length': 0,
+			'require-atomic-updates': 0
+		}
 	}
 ];

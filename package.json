@@ -1,6 +1,6 @@
 {
   "name": "@bashfulbandit/starwars.node.api",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "A Star Wars REST API to retrieving Star Wars universe data.",
   "type": "module",
   "main": "index.js",

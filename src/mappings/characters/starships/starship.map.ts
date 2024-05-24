@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/prefer-readonly-parameter-types */
 import type { Starship } from '~/core/models/starship';
 import type { StarshipDto } from '~/models/starship';
 

@@ -1,7 +1,7 @@
 import type { Character } from '~/core/models/character';
 import type { CharacterDto } from '~/models/character';
 
-export const toDto = (model: Readonly<Character>): CharacterDto => ({
+export const toDto = (model: Character): CharacterDto => ({
 	birthYear: model.birthYear,
 	createdAt: model.createdAt,
 	eyeColor: model.eyeColor,

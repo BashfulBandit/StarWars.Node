@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/prefer-readonly-parameter-types */
 import type { Species } from '~/core/models/species';
 import type { SpeciesDto } from '~/models/species';
 

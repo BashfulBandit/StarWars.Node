@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/prefer-readonly-parameter-types */
 import { episodesStore } from '~/core/stores/episodes.store';
 import type { ListEpisodeSpecies } from '~/core/queries/episodes/species/list-episode-species/list-episode-species.query';
 import { ListEpisodeSpeciesResult } from '~/core/queries/episodes/species/list-episode-species/list-episode-species.result';

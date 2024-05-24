@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/prefer-readonly-parameter-types */
 import type { ListEpisodeSpecies } from '~/core/queries/episodes/species/list-episode-species/list-episode-species.query';
 import type { ListEpisodeSpeciesResponse } from '~responses/episodes/species/list.response';
 import type { ListEpisodeSpeciesResult } from '~/core/queries/episodes/species/list-episode-species/list-episode-species.result';
@@ -14,7 +13,6 @@ import {
 const toFilter = (ctx: RouterContext): SpeciesSearchFilter => ({
 	episodeId: ctx.params.episodeId,
 	page: typeof ctx.query.page !== 'string' || isNaN(Number(ctx.query.page)) ? DEFAULT_PAGE_NUMBER : Number(ctx.query.page),
-	// eslint-disable-next-line @typescript-eslint/no-magic-numbers
 	pageSize: typeof ctx.query.pageSize !== 'string' && isNaN(Number(ctx.query.pageSize)) ? DEFAULT_PAGE_SIZE : Number(ctx.query.pageSize)
 });
 

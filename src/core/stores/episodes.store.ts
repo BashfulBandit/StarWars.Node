@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/prefer-readonly-parameter-types */
 import type { Episode } from '~/core/models/episode';
 import type { EpisodesSearchfilter } from '~/core/models/filters/episodes.filter';
 import type { Film } from '~/clients/models/film';
@@ -62,6 +61,8 @@ const list = async (filter: EpisodesSearchfilter): Promise<Page<Episode>> => {
 			...pages.map((value: ListFilmsResponse) => value.results).flat(1)
 		);
 
+		// Just disabling this because the call to `filter` is only in place for if/when
+		// I want to add support for filtering by some property.
 		// eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
 		const filtered = [...films].filter((): boolean => true)
 			.sort(() => 0)

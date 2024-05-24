@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/prefer-readonly-parameter-types */
 import type { ListCharacterStarships } from '~/core/queries/characters/starships/list-character-starships/list-character-starships.query';
 import type { ListCharacterStarshipsResponse } from '~/responses/characters/starships/list.response';
 import type { ListCharacterStarshipsResult } from '~/core/queries/characters/starships/list-character-starships/list-character-starships.result';
@@ -14,7 +13,6 @@ import {
 const toFilter = (ctx: RouterContext): StarshipsSearchFilter => ({
 	characterId: ctx.params.characterId,
 	page: typeof ctx.query.page !== 'string' || isNaN(Number(ctx.query.page)) ? DEFAULT_PAGE_NUMBER : Number(ctx.query.page),
-	// eslint-disable-next-line @typescript-eslint/no-magic-numbers
 	pageSize: typeof ctx.query.pageSize !== 'string' && isNaN(Number(ctx.query.pageSize)) ? DEFAULT_PAGE_SIZE : Number(ctx.query.pageSize)
 });
 

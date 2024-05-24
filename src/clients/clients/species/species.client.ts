@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/prefer-readonly-parameter-types */
+import { buildError } from '~/clients/utilities/build-error';
 import { DEFAULT_HEADERS } from '~/clients/swapi.client';
 import type { ListSpeciesRequest } from '~/clients/requests/species/list.request';
 import type { ListSpeciesResponse } from '~/clients/responses/species/list.response';
@@ -17,7 +17,8 @@ const list = async (request: ListSpeciesRequest): Promise<ListSpeciesResponse> =
 		method: 'GET'
 	});
 
-	return await response.json() as ListSpeciesResponse;
+	if (response.ok) return await response.json() as ListSpeciesResponse;
+	throw await buildError(response);
 };
 
 export const speciesClient = {

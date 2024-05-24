@@ -6,7 +6,7 @@ enum ErrorHttpStatuses {
 	NOT_FOUND = 404
 }
 
-export const buildException = async (response: Response): Promise<SWApiClientError> => {
+export const buildError = async (response: Response): Promise<SWApiClientError> => {
 	const message = await response.text() ? '' : 'Error communicating with the StarWars API.';
 
 	switch (response.status) {

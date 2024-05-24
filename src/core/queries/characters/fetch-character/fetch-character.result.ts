@@ -5,12 +5,12 @@ import { QueryResult } from '~/core/queries/query.result';
 export class FetchCharacterResult extends QueryResult {
 	character: Character | null;
 
-	constructor (character: Readonly<Character> | null, error?: Readonly<Error> | null) {
+	constructor (character: Readonly<Character> | null, error?: Readonly<Error>) {
 		if (error) {
 			super(false, error);
 			this.character = null;
 		} else {
-			super(true);
+			super(true, error);
 			this.character = character;
 		}
 	}

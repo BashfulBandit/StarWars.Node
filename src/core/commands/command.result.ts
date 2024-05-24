@@ -1,10 +1,10 @@
 export abstract class CommandResult {
 	succeeded: boolean;
-	error?: Error;
+	error: Error;
 
 	constructor (
 		succeeded: boolean,
-		error?: Readonly<Error>
+		error: Readonly<Error>
 	) {
 		this.succeeded = succeeded;
 		this.error = error;

@@ -5,13 +5,13 @@ export class CalculatePopulationResult extends CommandResult {
 
 	constructor (
 		population: Readonly<number> | null,
-		error?: Readonly<Error> | null
+		error?: Readonly<Error>
 	) {
 		if (error) {
 			super(false, error);
 			this.population = null;
 		} else {
-			super(true);
+			super(true, new Error());
 			this.population = population;
 		}
 	}

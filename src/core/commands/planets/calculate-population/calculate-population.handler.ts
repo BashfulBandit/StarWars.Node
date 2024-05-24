@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/prefer-readonly-parameter-types */
 import type { CalculatePopulation } from '~/core/commands/planets/calculate-population/calculate-population.command';
 import { CalculatePopulationError } from '~/core/commands/planets/calculate-population/calculate-population.error';
 import { CalculatePopulationResult } from '~/core/commands/planets/calculate-population/calculate-population.result';

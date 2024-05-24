@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/prefer-readonly-parameter-types */
+import { buildError } from '~/clients/utilities/build-error';
 import { DEFAULT_HEADERS } from '~/clients/swapi.client';
 import type { ListStarshipsRequest } from '~/clients/requests/starships/list.request';
 import type { ListStarshipsResponse } from '~/clients/responses/starships/list.response';
@@ -17,7 +17,8 @@ const list = async (request: ListStarshipsRequest): Promise<ListStarshipsRespons
 		method: 'GET'
 	});
 
-	return await response.json() as ListStarshipsResponse;
+	if (response.ok) return await response.json() as ListStarshipsResponse;
+	throw await buildError(response);
 };
 
 export const starshipsClient = {

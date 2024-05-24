@@ -6,7 +6,7 @@ import { QueryResult } from '~/core/queries/query.result';
 export class ListEpisodesResult extends QueryResult {
 	page: Page<Episode> | null;
 
-	private constructor (page: Page<Episode> | null, error?: Readonly<Error> | null) {
+	private constructor (page: Page<Episode> | null, error?: Readonly<Error>) {
 		if (error) {
 			super(false, error);
 			this.page = null;

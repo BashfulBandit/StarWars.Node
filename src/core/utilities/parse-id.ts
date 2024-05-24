@@ -1,2 +1,3 @@
-// eslint-disable-next-line @typescript-eslint/no-magic-numbers
-export const parseId = (url: string): string => `${url.split('/').at(-2)}`;
+const NEGATIVE_TWO = -2;
+
+export const parseId = (url: string): string => `${url.split('/').at(NEGATIVE_TWO)}`;
